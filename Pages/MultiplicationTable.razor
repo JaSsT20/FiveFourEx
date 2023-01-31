@@ -2,6 +2,19 @@
 
 <h3>MultiplicationTable</h3>
 
-@code {
+<div>
+    <input type="number" @bind="number" />
+    <button>Generar</button>
+</div>
+<p>El valor obtenido fue: @number</p>
 
+@for(int i = 1; i <= 10; i++)
+{
+    result = i*number;
+    <p>@number x @i = @result</p>
+}
+
+@code {
+    private int number { get; set; }
+    private int result { get; set; }
 }
