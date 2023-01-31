@@ -2,6 +2,25 @@
 
 <h3>Factorial</h3>
 
-@code {
+<div>
+    <div>
+        <h5>Number</h5>
+        <input type="number" @bind="number" style="width: 100px;"/>
+    </div>
+   <p>Factorial de @number es @CalculateFactorial()</p>
+</div>
 
+@code 
+{
+    private int number { get; set; }
+
+    private int CalculateFactorial()
+    {
+        int result = 1;
+        for (int actualNumber = 1; actualNumber <= number; actualNumber++)
+        {
+            result *= actualNumber;
+        }
+        return result;
+    }
 }
