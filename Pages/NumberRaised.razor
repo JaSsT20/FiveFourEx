@@ -1,0 +1,33 @@
+﻿@page "/Empowerment"
+
+<h3>NumberRaised</h3>
+
+<div>
+    <div>
+        <h5>Base</h5>
+        <input type="number" @bind="baseNumber" style="width: 100px;"/>
+    </div>
+    <div>
+        <h5>Exponent</h5>
+        <input type="number" @bind="exponent" style="width: 100px;" />
+    </div>
+    <p>@baseNumber ^ @exponent = @Calculate()</p>
+    @*<button class="btn btn-primary" @onclick="Calculate">Calculate</button>*@
+</div>
+
+@code {
+    private int baseNumber { get; set; }
+    private int exponent { get; set; }
+
+    private int result { get; set; }
+
+    private int Calculate()
+    {
+        result = baseNumber;
+        for(int i = 1; i < exponent; i++)
+        {
+            result *= baseNumber;
+        }
+        return result;
+    }
+}
