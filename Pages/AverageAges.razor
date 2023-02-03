@@ -14,7 +14,8 @@
 
 <p>Oldest: @GetOldest()</p>
 <p>Youngest: @GetYoungest()</p>
-@code {
+<p>Average: @GetAverage()</p>
+@code{
     private int[] ages = new int[10] {13, 24, 11, 32, 65, 73, 92, 80, 55, 34};
 
     private int GetOldest()
@@ -36,5 +37,15 @@
                 yougest = ages[i];
         }
         return yougest;
+    }
+
+    private int GetAverage()
+    {
+        int average, sum = 0;
+        for(int i = 0; i < ages.Length; i++)
+        {
+            sum += ages[i];
+        }
+        return average = sum / ages.Length;
     }
 }
